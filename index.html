@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f1e7">
+  <title>Krásné svátky · Luis Rodríguez a Ladislav Prištic</title>
+  <meta name="description" content="Krásné svátky, Veselé Vánoce a šťastný nový rok 2027 plný radosti a hojnosti od Luise Rodrígueze a Ladislava Prištice.">
+  <meta property="og:title" content="Krásné svátky · Luis Rodríguez a Ladislav Prištic">
+  <meta property="og:description" content="Klepněte na pečeť a otevřete naše vánoční a novoroční přání.">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:image" content="assets/social.jpg">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%237d2729'/%3E%3Cpath d='M32 14l4.2 13.8L50 32l-13.8 4.2L32 50l-4.2-13.8L14 32l13.8-4.2z' fill='%23f7f1e7'/%3E%3C/svg%3E">
+  <link rel="preload" href="vendor/fonts/pinyon-script-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="vendor/fonts/pinyon-script-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body class="locked">
+
+  <div id="intro">
+    <div id="envStage">
+      <img id="envLiner" class="env-layer" src="assets/forro-interior.jpg" alt="">
+      <img id="flapBottom" class="env-layer flap" src="assets/solapa-abajo.png" alt="">
+      <img id="flapLeft" class="env-layer flap" src="assets/solapa-izq.png" alt="">
+      <img id="flapRight" class="env-layer flap" src="assets/solapa-der.png" alt="">
+      <div id="seamGlow" aria-hidden="true"></div>
+      <div id="flapTopWrap" class="env-layer flap">
+        <img id="flapTop" class="env-layer" src="assets/solapa-arriba.png" alt="">
+        <div id="sealHalo" aria-hidden="true"></div>
+        <img id="sealImg" src="assets/sello-lacre.png" alt="">
+      </div>
+      <img id="envClosed" class="env-layer" src="assets/sobre-cerrado.jpg" alt="" fetchpriority="high">
+    </div>
+    <video id="introVideo" playsinline muted preload="auto" poster="assets/sobre-cerrado.jpg" hidden aria-hidden="true"></video>
+    <button id="seal" type="button" aria-label="Otevřít vánoční přání"></button>
+    <p id="hint">Klepněte na pečeť pro otevření</p>
+    <button id="skip" type="button">Přeskočit</button>
+  </div>
+
+  <main id="page">
+    <canvas id="snow" aria-hidden="true"></canvas>
+
+    <section id="hero" class="band">
+      <img src="assets/portada-navidad.jpg" alt="Vánoční větvičky borovice osvětlené teplým světlem svíček a zlatými ozdobami" fetchpriority="high">
+      <p class="draft" hidden>Návrh · ukázkové údaje</p>
+      <div class="hero-text">
+        <p class="caps" data-hero data-text="eyebrow"></p>
+        <h1 class="script" data-hero data-text="heroTitle"></h1>
+        <p class="hero-sub" data-hero data-text="heroSubtitle"></p>
+        <svg class="sprig" data-hero aria-hidden="true"><use href="#sprig"/></svg>
+        <p class="hero-from-kicker" data-hero>Přejí</p>
+        <p class="hero-from" data-hero data-text="sendersCaps"></p>
+      </div>
+      <span class="edge bottom" data-edge="#f7f1e7"></span>
+    </section>
+
+    <section id="cuenta" aria-label="Sváteční odpočet">
+      <p id="countdownTitle" class="caps count-label"></p>
+      <div id="countdown" role="group"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg class="sprig"><use href="#sprig"/></svg></div>
+
+    <section id="carta">
+      <svg class="ico reveal" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>
+      <h2 class="title reveal" data-text="letterTitle"></h2>
+      <div id="letterBody" class="letter-body"></div>
+      <p class="letter-closing reveal" data-text="letterClosing"></p>
+      <p class="script signature reveal" data-text="sendersSignature"></p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg class="sprig"><use href="#sprig"/></svg></div>
+
+    <section id="deseos">
+      <p class="script monogram reveal" data-text="monogram"></p>
+      <h2 class="caps heading reveal"><svg class="sprig flip" aria-hidden="true"><use href="#sprig"/></svg><span data-text="wishesHeading"></span><svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg></h2>
+      <ol id="timeline"></ol>
+    </section>
+
+    <section id="foto" class="band">
+      <span class="edge top" data-edge="#f7f1e7"></span>
+      <img id="fotoImg" src="assets/brindis-ano-nuevo.jpg" alt="Dvě sklenky na přípitek osvětlené teplým světlem svíček u větví borovice" loading="lazy">
+      <span class="edge bottom" data-edge="#dfe6e0"></span>
+    </section>
+
+    <section id="brindis" class="band">
+      <div id="sparkles" aria-hidden="true"></div>
+      <svg class="ico reveal" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-glass"/></svg>
+      <h2 class="caps reveal" data-text="toastHeading"></h2>
+      <p class="reveal" data-text="toastBody"></p>
+      <button id="toastBtn" class="pill crimson reveal" type="button" data-text="toastButton"></button>
+      <p id="toastPhrase" class="toast-phrase" role="status" aria-live="polite"></p>
+      <span class="edge bottom" data-edge="#f7f1e7"></span>
+    </section>
+
+    <section id="cierre">
+      <p class="script monogram big" data-text="monogram"></p>
+      <p class="caps cierre-names" data-text="sendersCaps"></p>
+      <p class="cierre-season" data-text="season"></p>
+      <svg class="sprig" aria-hidden="true"><use href="#sprig"/></svg>
+      <button id="replay" type="button">Přehrát otevření znovu</button>
+    </section>
+  </main>
+
+  <button id="music" type="button" hidden aria-label="Pozastavit hudbu"></button>
+  <audio id="audio" loop preload="auto"></audio>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sprig" viewBox="0 0 40 16">
+      <path d="M2 8h36M10 8c2-4 5.5-5 8.5-5-1.2 3-4.2 5-8.5 5zM10 8c2 4 5.5 5 8.5 5-1.2-3-4.2-5-8.5-5zM21 8c1.5-3.2 4.5-4.2 7.5-4.2-1 2.8-3.5 4.2-7.5 4.2zM21 8c1.5 3.2 4.5 4.2 7.5 4.2-1-2.8-3.5-4.2-7.5-4.2z"/>
+      <circle cx="19.5" cy="5.2" r="1.1" fill="currentColor" stroke="none"/>
+      <circle cx="19.5" cy="10.8" r="1.1" fill="currentColor" stroke="none"/>
+      <circle cx="31.5" cy="8" r="1.1" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 2.5L13.9 9.1L20.5 11L13.9 12.9L12 19.5L10.1 12.9L3.5 11L10.1 9.1Z"/>
+      <path d="M17.5 4.5L15.3 6.7M6.5 17.5L8.7 15.3M17.5 17.5L15.3 15.3M6.5 4.5L8.7 6.7"/>
+    </symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24">
+      <rect x="4" y="10" width="16" height="10" rx="1"/>
+      <path d="M3 7.5h18v2.5H3zM12 7.5V20"/>
+      <path d="M12 7.5C12 4.8 9.8 3.5 8.2 4.5C6.8 5.4 7.5 7.5 12 7.5zM12 7.5C12 4.8 14.2 3.5 15.8 4.5C17.2 5.4 16.5 7.5 12 7.5z"/>
+    </symbol>
+    <symbol id="i-candle" viewBox="0 0 24 24">
+      <path d="M12 3.2c1.6 2 1.8 3.7 0 5-1.8-1.3-1.6-3 0-5z"/>
+      <path d="M12 8.2V10"/>
+      <rect x="8.5" y="10" width="7" height="10.5" rx="1"/>
+      <path d="M6 20.5h12M8.5 13c1.5 1 2.2-1 3.5 0s2 1 3.5 0"/>
+    </symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24">
+      <path d="M12 19.8s-6.8-4.4-7.8-8.9C3.4 7.6 5.8 5 8.6 5c1.7 0 2.9.9 3.4 2.1C12.5 5.9 13.7 5 15.4 5c2.8 0 5.2 2.6 4.4 5.9-1 4.5-7.8 8.9-7.8 8.9z"/>
+      <path d="M12 9.8v3.2M10.4 11.4h3.2"/>
+    </symbol>
+    <symbol id="i-glass" viewBox="0 0 24 24">
+      <path d="M5.5 3.5h5l-.6 6.2a2.2 2.2 0 0 1-3.8 0zM8 10.8V20M5.8 20h4.4"/>
+      <path d="M13.5 3.5h5l-.6 6.2a2.2 2.2 0 0 1-3.8 0zM16 10.8V20M13.8 20h4.4"/>
+      <path d="M12 2.2v1.6M10.4 3l.8.6M13.6 3l-.8.6"/>
+    </symbol>
+  </svg>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="config.js?v=4"></script>
+  <script src="main.js?v=5"></script>
+</body>
+</html>
